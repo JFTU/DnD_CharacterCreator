@@ -2,10 +2,34 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles/style.css">
         <title> Template page</title>
     </head>
 
     <body>
+        <header>
+            <h1>Character Sheet</h1>
+            <h2></h2>
+            <form>
+                <label for="ClassSelect">Class Select Dropdown</label>
+                <select name = "ClassSelect" id="ClassSelect">
+                </select>
 
+                <label for="SubClassSelect">Subclass Select Dropdown</label>
+                <select name="SubClassSelect" id="SubClassSelect"></select>
+
+                <label for="RaceSelect">Race Select Dropdown</label>
+                <select name="RaceSelect" id="RaceSelect"></select>
+
+                <label for="SubRaceSelect" class="notVisible" name="SubRaceSelect">Sub Race Select Dropdown</label>
+                <select name="SubRaceSelect" id="SubRaceSelect" class="notVisible"></select>
+
+                <label for="SaveButton">Save Button</label>
+                <input type="button" name="SaveButton" id="SaveButton" value="Save">
+
+                <script src="/scripts/main.js"></script>
+                <script src="/scripts/Classes/Character.js"></script>
+            </form>
+        </header>
     </body>
 </html>
