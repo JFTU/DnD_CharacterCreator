@@ -1,33 +1,66 @@
-class Character{
+class Character {
     race;
+    subRace = null;
+
     charClass;
-    abScores;
     subClass;
 
-    constructor(charClass, race, subClass){
-        this.abScores = [1,2,3,4,5,6];
-        this.race = race;
+    abScores;
+    skills;
+
+    constructor(charClass, subClass, race, subRace) {
         this.charClass = charClass;
         this.subClass = subClass;
+        this.race = race;
+        this.subRace = subRace;
     }
 
-    SetUpCharacter(){
+    async SetABScores(skillsList) {
+        let initialScores = new Array();
+        initialScores.push(new AbilityScores("STR", 10, this.race));
+        initialScores.push(new AbilityScores("DEX", 10, this.race));
+        initialScores.push(new AbilityScores("CON", 10, this.race));
+        initialScores.push(new AbilityScores("INT", 10, this.race));
+        initialScores.push(new AbilityScores("WIS", 10, this.race));
+        initialScores.push(new AbilityScores("CHA", 10, this.race));
+        this.SetScores(initialScores);
+        await this.SetSkillData(skillsList);
+    }
+
+    async Constructor(skillsList){
+        await this.SetABScores(skillsList);
+    }
+
+    SetScores(scores){
+        this.abScores = scores;
+    }
+
+    async SetSkillData(skillsList){
+        let initialSkills = new Array();
+        for(let skill of skillsList){
+            initialSkills.push(new Skill(skill.name))
+        }
+
+        for(let skill of initialSkills){
+            await skill.SetSkillModifier(skillsList,this.abScores);
+        }
+        this.SetSkills(initialSkills);
+    }
+
+    SetSkills(initialSkills){
+        this.skills = initialSkills;
+    }
+
+    SetCombatStats() {
 
     }
 
-    SetABScores(){
-
-    }
-
-    SetCombatStats(){
-        
-    }
-
-    SaveCharacter(){
+    SaveCharacter(localStorage) {
+        console.log(this.skills);
         let x = JSON.stringify(this);
-        console.log(x);
+        localStorage.setItem("test", x);
     }
 
-    LoadCharacter(){
+    LoadCharacter() {
     }
 }
