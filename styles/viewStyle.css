@@ -1,0 +1,43 @@
+h2{
+    margin-bottom: 0.5rem;
+}
+
+.Scores{
+    display: flex;
+    flex-flow: row wrap;
+    width: min-content;
+    margin: 0;
+}
+
+.ScoreTable{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+table{
+    width: 100%;
+}
+
+.SkillModifier{
+    text-align: center;
+}
+
+#Content{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+h3{
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    height: min-content;
+}
+
+p{
+    margin: 0.1rem;
+}
+
+
+

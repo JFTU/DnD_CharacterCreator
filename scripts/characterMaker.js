@@ -5,7 +5,10 @@ let raceList;
 let subRaceList;
 let subClassList;
 let skillList;
+let spellList;
 let backgroundList;
+let currentlySelected;
+let currentSection;
 
 let currentClass;
 let currentRace;
@@ -13,26 +16,46 @@ let currentSubRace;
 let currentSubclass;
 let currentBackground;
 
+let currentSelectedSpells = new Array();
+let selectedSpellsElements = new Array();
+
 const basicSection = document.getElementById("CharacterForm");
 const backgroundSection = document.getElementById("BackgroundForm");
-const basicNextButton = document.getElementById("BasicNextButton");
-const backgroundBackButton = document.getElementById("BackgroundBackButton");
+const spellsSection = document.getElementById("SpellsForm");
 const saveButton = document.getElementById("SaveButton");
 const classSelect = document.getElementById("ClassSelect");
 const raceSelect = document.getElementById("RaceSelect");
 const backgroundSelect = document.getElementById("BackgroundSelect");
+const bondBox = document.getElementById("BondSelect");
 const flawBox = document.getElementById("FlawSelect");
 const idealBox = document.getElementById("IdealsSelect");
 const traitBox = document.getElementById("TraitSelect");
+const statsButton = document.getElementById("StatsButton");
+const backgroundButton = document.getElementById("BackgroundButton");
+const spellsButton = document.getElementById("SpellsButton");
+const backgroundDesc = document.getElementById("BackgroundDescription");
+const spellsSelect = document.getElementById("SpellsSelect");
+const selectedSpells = document.getElementById("SelectedSpells");
+const localStorage = window.localStorage;
 
-
-backgroundBackButton.addEventListener("click", () => { Next(backgroundSection, basicSection); });
 saveButton.addEventListener("click", SaveCharacter);
 classSelect.addEventListener("change", ChangeClass);
 raceSelect.addEventListener("change", ChangeRace);
-basicNextButton.addEventListener("click", () => { Next(basicSection, backgroundSection); });
+spellsSelect.addEventListener("change", AddSpell);
+statsButton.addEventListener("click", () => {
+    ChangeSelection(statsButton, basicSection);
+});
 
-const localStorage = window.localStorage;
+backgroundButton.addEventListener("click", () => {
+    ChangeSelection(backgroundButton, backgroundSection);
+});
+
+spellsButton.addEventListener("click", () => {
+    ChangeSelection(spellsButton, spellsSection);
+});
+
+currentlySelected = statsButton;
+currentSection = basicSection;
 
 async function InitialSetup() {
     let initialClass;
@@ -51,6 +74,7 @@ async function InitialSetup() {
     // URL: https://stackoverflow.com/questions/49938266/how-to-return-values-from-async-functions-using-async-await-from-function
     // Date Accessed: 12/04/2023
     await GetClasses().then(clas => {
+        //End of cited code
         initialClass = clas.results[0];
         initialClassList = clas.results;
     });
@@ -104,7 +128,53 @@ function ChangeClass() {
         currentSubclass = result.subclasses[0];
         subClassList = result.subclasses;
         currentClass = result;
+        if(currentClass.spells !=null){
+            spellsButton.className = "visible";
+            GetSpells(currentClass.spells).then(list => {
+                spellList = list;
+                SetSelectionBox("SpellsSelect", list.results);
+            });
+        }
     });
+}
+
+async function GetSpells(spellListURL){
+    let spellList = await fetch("https://www.dnd5eapi.co" + spellListURL);
+    spellList = await spellList.json();
+    return spellList;
+}
+
+async function GetSpellData(spellName){
+    for (let spell in spellList)
+    {
+        if (spell.name == spellName){
+            let spellData = await fetch("https://www.dnd5eapi.co" + spell.url);
+            spellData = await spellData.json();
+            console.log(spellData);
+            return spellData;
+        } 
+    }
+}
+
+async function AddSpell(){
+    await GetSpellData(spellsSelect.value).then(spellData => {
+        currentSelectedSpells.push(spellData);
+        selectedSpellsElements.push('<section id="'+ spellData.name +'">');
+        selectedSpells.innerHTML += selectedSpellsElements[selectedSpellsElements.length -1];
+
+        document.getElementById(spellData.name).innerHTML += '<p>' + spellData.name + '</p>';
+
+        document.getElementById(currentSelectedSpells[currentSelectedSpells.length - 1].name).addEventListener("click", () =>{
+            RemoveSpell(currentSelectedSpells.length - 1);
+        });
+    });
+}
+
+function RemoveSpell(spellNum){
+    let spell = currentSelectedSpells.pop(currentSelectedSpells[spellNum]);
+    let button = selectedSpellsButton.pop(selectedSpellsButton[spellNum]);
+    selectedSpells.remove(spell);
+    selectedSpells.remove(button);
 }
 
 async function GetSkills() {
@@ -127,17 +197,24 @@ async function GetBackground() {
     background = await background.json();
     SetSelectionBox("BackgroundSelect", backgroundData.results);
 
-    flawBox.innerHTML = "";
+    backgroundDesc.innerText = background.feature.desc[0];
+
+    bondBox.innerHTML = '';
+    for (let object of background.bonds.from.options) {
+        bondBox.innerHTML += '<label for="' + object.string + '">Option for ' + object.string + '</label> <option id="' + object.string + '" value="' + object.string + '">' + object.string + '</option>';
+    }
+
+    flawBox.innerHTML = '';
     for (let object of background.flaws.from.options) {
         flawBox.innerHTML += '<label for="' + object.string + '">Option for ' + object.string + '</label> <option id="' + object.string + '" value="' + object.string + '">' + object.string + '</option>';
     }
 
-    idealBox.innerHTML = "";
+    idealBox.innerHTML = '';
     for (let object of background.ideals.from.options) {
         idealBox.innerHTML += '<label for="' + object.desc + '">Option for ' + object.desc + '</label> <option id="' + object.desc + '" value="' + object.desc + '">' + object.desc + '</option>';
     }
 
-    traitBox.innerHTML = "";
+    traitBox.innerHTML = '';
     for (let object of background.personality_traits.from.options) {
         traitBox.innerHTML += '<label for="' + object.string + '">Option for "' + object.string + '"</label> <option id="' + object.string + '" value="' + object.string + '">' + object.string + '</option>';
     }
@@ -190,25 +267,27 @@ function ChangeRace() {
 }
 
 async function SaveCharacter() {
-    console.log(flawBox.value);
-    let character = new Character(currentClass, currentSubclass, currentRace, currentSubRace, currentBackground, flawBox.value, idealBox.value, traitBox.value);
+    let character = new Character(currentClass, currentSubclass, currentRace, currentSubRace, currentBackground, bondBox.value, flawBox.value, idealBox.value, traitBox.value);
     await character.Constructor(skillList);
     character.SaveCharacter(localStorage);
 }
 
-function Next(currentForm, nextForm) {
-    nextForm.className = "visible";
-    currentForm.className = "notVisible";
+function ChangeSelection(newSelection, targetSection) {
+    if (currentlySelected != newSelection) {
+        currentlySelected.className = "";
+        currentSection.className = "notVisible";
+        newSelection.className = "Selected";
+        currentlySelected = newSelection;
+        currentSection = targetSection;
+        targetSection.className = "visible Screen";
+    }
 }
 
-try{
-    fetch('https://www.dnd5eapi.co/');
+
+if(!fetch('https://www.dnd5eapi.co/').failed){
     serverAvailable = true;
 }
-catch{
-    serverAvailable = false;
-    console.log("worked");
-}
+
 
 if(serverAvailable){
     InitialSetup().then(result => {
@@ -222,5 +301,9 @@ if(serverAvailable){
         skillList = result[6];
         backgroundList = result[7];
         currentBackground = result[8];
+
+        if(currentClass.spells !=null){
+            spellsButton.className = "visible";
+        }
     });
 }

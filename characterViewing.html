@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/styles/viewStyle.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <title> View Characters </title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Characters</h1>
+            <nav>
+                <a href="index.html">Home</a> -> <a href="/characterViewing.html">Characters</a>
+            </nav>
+
+        </header>
+        <main id="main">
+            <nav id="sideBar">
+                <section id="bar" class="notVisible">
+                    <input type="button" value="Home" id="HomeButton" name="HomeButton">
+                    <input type="button" value="Characters" id="CharacterButton" name="CharacterButton">
+                    <input type="button" value="Creator" id="CreatorButton" name="CreatorButton">
+                </section>
+                <input type="button" value="Open" id="OpenButton">
+            </nav>
+
+            <section id="Content">
+                <select name="CharacterSelect" id="CharacterSelect"></select>
+                <h2 id="CharacterName" name="CharacterName">testing name</h2>
+                <nav id="ScreenButtons">
+                    <input type="button" value="Stats" id="StatsButton" class="Selected">
+                    <input type="button" value="Background" id="BackgroundButton">
+                    <input type="button" value="Spells" id="SpellsButton">
+                    <input type="button" value="All" id="AllButton">
+                    <input type="button" value="Edit" id="EditButton">
+                </nav>
+
+                <section id="StatsSection" class="Screen">
+                    <section id="ScoreText" name="ScoreText" class="ScoreTable"></section>
+
+                    <div name="DividerLine" class="dividerLine"></div>
+
+                    <p id="ClassText" name="ClassText"></p>
+
+                    <div name="DividerLine" class="dividerLine"></div>
+
+                    <p id="RaceText" class="RaceText"></p>
+
+                    <div name="DividerLine" class="dividerLine"></div>
+
+                    <table id="ProficiencyTable" name="ProficiencyTable">
+                        <tr>
+                            <th>Proficiency</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </table>
+                </section>
+                <section id="BackgroundSection" class="notVisible Screen">
+                    <h3 id="BackgroundText" name="BackgroundText"></h3>
+                    <p id="BondText" name="BondText"></p>
+                    <p id="FlawText" name="FlawText"></p>
+                    <p id="IdealsText" name="IdealsText"></p>
+                    <p id="TraitText" name="TraitText"></p>
+                    <p></p>
+                </section>
+                <section id="SpellsSection">
+
+                </section>
+            </section>
+        </main>
+        <script src="/scripts/sideNavBar.js"></script>
+        <script src="/scripts/viewCharacter.js"></script>
+    </body>
+</html>
