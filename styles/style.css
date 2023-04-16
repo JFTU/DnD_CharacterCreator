@@ -5,3 +5,37 @@
 .notVisible{
     display: none;
 }
+main{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100%;
+}
+nav{
+    background-color: blue;
+    margin-right: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+select{
+    width: 100%;
+    height: 2em;
+    text-overflow: ellipsis;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+input{
+    margin-top: 0.5em;
+}
+
+.buttonsBox{
+    display: flex;
+    flex-flow: row wrap;
+}

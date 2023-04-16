@@ -8,30 +8,66 @@
 
     <body>
         <header>
-            <h1>Character Sheet</h1>
-            <h2></h2>
-            <form action="change">
-                <label for="ClassSelect">Class Select Dropdown</label>
-                <select name = "ClassSelect" id="ClassSelect">
-                </select>
+            <h1>Level 1 Character Creator</h1>
+            <nav>
+                
+            </nav>
 
-                <label for="SubClassSelect">Subclass Select Dropdown</label>
-                <select name="SubClassSelect" id="SubClassSelect"></select>
-
-                <label for="RaceSelect">Race Select Dropdown</label>
-                <select name="RaceSelect" id="RaceSelect"></select>
-
-                <label for="SubRaceSelect" class="notVisible" name="SubRaceSelect">Sub Race Select Dropdown</label>
-                <select name="SubRaceSelect" id="SubRaceSelect" class="notVisible"></select>
-
-                <label for="SaveButton">Save Button</label>
-                <input type="button" name="SaveButton" id="SaveButton" value="Save">
-
-                <script src="/scripts/main.js"></script>
-                <script src="/scripts/Classes/Character.js"></script>
-                <script src="/scripts/Classes/AbilityScores.js"></script>
-                <script src="/scripts/Classes/Skill.js"></script>
-            </form>
         </header>
+        <main>
+            <nav>
+                <input type="button" value="Home">
+                <input type="button" value="Characters">
+                <input type="button" value="Level 1 Character Creator">
+            </nav>
+            <section id="Forms">
+                <section id="CharacterForm" class="visible">
+                    <form name="Basic" id="Basic">
+                        <label for="ClassSelect">Class</label>
+                        <select name = "ClassSelect" id="ClassSelect"></select>
+        
+                        <label for="SubClassSelect">Subclass</label>
+                        <select name="SubClassSelect" id="SubClassSelect"></select>
+        
+                        <label for="RaceSelect">Race</label>
+                        <select name="RaceSelect" id="RaceSelect"></select>
+        
+                        <label for="SubRaceSelect" class="notVisible">Subrace</label>
+                        <select name="SubRaceSelect" id="SubRaceSelect" class="notVisible"></select>
+        
+                        <input type="button" name="BasicNextButton" id="BasicNextButton" value="Next">
+        
+                        
+                    </form>
+                </section>
+                <section id="BackgroundForm" class="notVisible">
+                    <form name="CharacterBackground" id="CharacterBackground">
+                        <label for="BackgroundSelect">Personality</label>
+                        <select name="BackgroundSelect" id="BackgroundSelect"></select>
+
+                        <label for="FlawSelect">Flaw</label>
+                        <select name="FlawSelect" id="FlawSelect"></select>
+
+                        <label for="IdealsSelect">Ideals</label>
+                        <select name="IdealsSelect" id="IdealsSelect"></select>
+
+                        <label for="TraitSelect">Trait</label>
+                        <select name="TraitSelect" id="TraitSelect"></select>
+                        <section id="Button Area">                        
+                            <input type="button" name="SaveButton" id="SaveButton" value="Save">
+                            <input type="button" name="BackgroundNextButton" id="BackgroundNextButton" value="Next">
+                            <input type="button" name="BackgroundBackButton" id="BackgroundBackButton" value="Back">
+                        </section>
+                    </form>
+                </section>
+            </section>
+
+        </main>
+
+
+        <script src="/scripts/main.js"></script>
+        <script src="/scripts/Classes/Character.js"></script>
+        <script src="/scripts/Classes/AbilityScores.js"></script>
+        <script src="/scripts/Classes/Skill.js"></script>
     </body>
 </html>

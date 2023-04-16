@@ -3,39 +3,23 @@ class AbilityScores{
     score;
     raceData;
     modifier;
-    constructor(name, score, raceData){
+    constructor(name, score, raceData, subraceData){
         this.name = name;
         this.score = score;
-        this.SetAbScores(raceData);
+        this.SetAbScores(raceData, subraceData);
     }
 
-    SetAbScores(raceData) {
+    SetAbScores(raceData, subraceData) {
         for (let bonus of raceData.ability_bonuses) {
             if(this.name == bonus.ability_score.name){
                 this.score += bonus.bonus;
             }
         }
-        if (this.subRace != null) {
-            for (let bonus of this.subRace.ability_bonuses) {
-                switch (bonus.ability_score.name) {
-                    case "STR":
-                        this.abScores[0] += bonus.bonus;
-                        break;
-                    case "DEX":
-                        this.abScores[1] += bonus.bonus;
-                        break;
-                    case "CON":
-                        this.abScores[2] += bonus.bonus;
-                        break;
-                    case "INT":
-                        this.abScores[3] += bonus.bonus;
-                        break;
-                    case "WIS":
-                        this.abScores[4] += bonus.bonus;
-                        break;
-                    case "CHA":
-                        this.abScores[5] += bonus.bonus;
-                        break;
+
+        if(subraceData != undefined){
+            for (let bonus of subraceData.ability_bonuses) {
+                if(this.name == bonus.ability_score.name){
+                    this.score += bonus.bonus;
                 }
             }
         }
