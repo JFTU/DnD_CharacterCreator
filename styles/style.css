@@ -17,6 +17,8 @@ nav{
     flex-flow: column nowrap;
 }
 
+nav
+
 form{
     display: flex;
     flex-flow: column;
