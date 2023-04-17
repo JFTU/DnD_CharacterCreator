@@ -1,4 +1,36 @@
-let serverAvailable = false;
+const form = document.getElementById("Basic");
+const basicSection = document.getElementById("StatsForm");
+const backgroundSection = document.getElementById("BackgroundForm");
+const spellsSection = document.getElementById("SpellsForm");
+const saveButton = document.getElementById("SaveButton");
+const saveScreenButton = document.getElementById("SaveScreenButton");
+const classSelect = document.getElementById("ClassSelect");
+const raceSelect = document.getElementById("RaceSelect");
+const backgroundSelect = document.getElementById("BackgroundSelect");
+const bondBox = document.getElementById("BondSelect");
+const flawBox = document.getElementById("FlawSelect");
+const idealBox = document.getElementById("IdealsSelect");
+const traitBox = document.getElementById("TraitSelect");
+const statsButton = document.getElementById("StatsButton");
+const backgroundButton = document.getElementById("BackgroundButton");
+const spellsButton = document.getElementById("SpellsButton");
+const backgroundDesc = document.getElementById("BackgroundDescription");
+const spellsSelect = document.getElementById("SpellsSelect");
+const selectedSpells = document.getElementById("SelectedSpells");
+const saveSection = document.getElementById("SaveForm");
+const strScore = document.getElementById("StrStat");
+const dexScore = document.getElementById("DexStat");
+const conScore = document.getElementById("ConStat");
+const intScore = document.getElementById("IntStat");
+const wisScore = document.getElementById("WisStat");
+const chaScore = document.getElementById("ChaStat");
+const nameInput = document.getElementById("NameInput");
+const abScoreHelp = document.getElementById("ABScoreHelp");
+const classDesc = document.getElementById("ClassDescription");
+const subClassDesc = document.getElementById("SubClassDescription");
+const raceDesc = document.getElementById("RaceDescription");
+const noAPISection = document.getElementById("NoAPI");
+const localStorage = window.localStorage;
 
 let classList;
 let raceList;
@@ -16,32 +48,17 @@ let currentSubRace;
 let currentSubclass;
 let currentBackground;
 
+let currentClassFeatures = new Array();
 let currentSelectedSpells = new Array();
 let selectedSpellsElements = new Array();
+let abScores = new Array();
+let storage = new Array();
 
-const basicSection = document.getElementById("CharacterForm");
-const backgroundSection = document.getElementById("BackgroundForm");
-const spellsSection = document.getElementById("SpellsForm");
-const saveButton = document.getElementById("SaveButton");
-const classSelect = document.getElementById("ClassSelect");
-const raceSelect = document.getElementById("RaceSelect");
-const backgroundSelect = document.getElementById("BackgroundSelect");
-const bondBox = document.getElementById("BondSelect");
-const flawBox = document.getElementById("FlawSelect");
-const idealBox = document.getElementById("IdealsSelect");
-const traitBox = document.getElementById("TraitSelect");
-const statsButton = document.getElementById("StatsButton");
-const backgroundButton = document.getElementById("BackgroundButton");
-const spellsButton = document.getElementById("SpellsButton");
-const backgroundDesc = document.getElementById("BackgroundDescription");
-const spellsSelect = document.getElementById("SpellsSelect");
-const selectedSpells = document.getElementById("SelectedSpells");
-const localStorage = window.localStorage;
-
-saveButton.addEventListener("click", SaveCharacter);
+saveScreenButton.addEventListener("click", SaveCharacter);
 classSelect.addEventListener("change", ChangeClass);
 raceSelect.addEventListener("change", ChangeRace);
 spellsSelect.addEventListener("change", AddSpell);
+form.addEventListener("submit", localSave);
 statsButton.addEventListener("click", () => {
     ChangeSelection(statsButton, basicSection);
 });
@@ -53,6 +70,13 @@ backgroundButton.addEventListener("click", () => {
 spellsButton.addEventListener("click", () => {
     ChangeSelection(spellsButton, spellsSection);
 });
+
+strScore.addEventListener("change", () => { CheckABScores(strScore); });
+dexScore.addEventListener("change", () => { CheckABScores(dexScore); });
+conScore.addEventListener("change", () => { CheckABScores(conScore); });
+intScore.addEventListener("change", () => { CheckABScores(intScore); });
+wisScore.addEventListener("change", () => { CheckABScores(wisScore); });
+chaScore.addEventListener("change", () => { CheckABScores(chaScore); });
 
 currentlySelected = statsButton;
 currentSection = basicSection;
@@ -113,12 +137,31 @@ async function GetClasses() {
 
 async function GetSubClasses(clas) {
     let classData = await fetch('https://www.dnd5eapi.co' + clas.url);
-    classData = await classData.json()
+    classData = await classData.json();
+    classDesc.innerText = '';
+    let classLevel = await (await fetch('https://www.dnd5eapi.co' + classData.class_levels)).json();
+    for (let feature of classLevel[0].features) {
+        let featureData = await (await fetch('https://www.dnd5eapi.co' + feature.url)).json();
+        currentClassFeatures.push(featureData);
+        classDesc.innerHTML += '<p>' + featureData.name;
+        let featureText = String(featureData.desc);
+        const featureDesc = featureText.split('.');
+        for (let sentence of featureDesc) {
+            if (sentence != '') {
+                if (sentence[0] == ",") {
+                    sentence = sentence.slice(1, sentence.length);
+                }
+                sentence = sentence.replace("-", "");
+                classDesc.innerHTML += '<p>' + sentence + '</p><div class="dividerLine"></div>';
+            }
+        }
+    }
     SetSelectionBox("SubClassSelect", classData.subclasses);
     return classData;
 }
 
 function ChangeClass() {
+    currentClassFeatures = new Array();
     for (let clas of classList) {
         if (clas.name == classSelect.value) {
             currentClass = clas;
@@ -128,53 +171,55 @@ function ChangeClass() {
         currentSubclass = result.subclasses[0];
         subClassList = result.subclasses;
         currentClass = result;
-        if(currentClass.spells !=null){
+        if (currentClass.spells != null) {
             spellsButton.className = "visible";
             GetSpells(currentClass.spells).then(list => {
-                spellList = list;
-                SetSelectionBox("SpellsSelect", list.results);
+                spellList = new Array();
+                for (let i = 0; i < 10; i++) {
+                    spellList.push(list.results[i]);
+                }
+                SetSelectionBox("SpellsSelect", spellList);
             });
         }
     });
 }
 
-async function GetSpells(spellListURL){
+async function GetSpells(spellListURL) {
     let spellList = await fetch("https://www.dnd5eapi.co" + spellListURL);
     spellList = await spellList.json();
     return spellList;
 }
 
-async function GetSpellData(spellName){
-    for (let spell in spellList)
-    {
-        if (spell.name == spellName){
-            let spellData = await fetch("https://www.dnd5eapi.co" + spell.url);
+async function GetSpellData(spellName) {
+    for (let spell in spellList) {
+        if (spellList[spell].name == spellName) {
+            let spellData = await fetch("https://www.dnd5eapi.co" + spellList[spell].url);
             spellData = await spellData.json();
-            console.log(spellData);
             return spellData;
-        } 
+        }
     }
 }
 
-async function AddSpell(){
+async function AddSpell() {
     await GetSpellData(spellsSelect.value).then(spellData => {
         currentSelectedSpells.push(spellData);
-        selectedSpellsElements.push('<section id="'+ spellData.name +'">');
-        selectedSpells.innerHTML += selectedSpellsElements[selectedSpellsElements.length -1];
-
-        document.getElementById(spellData.name).innerHTML += '<p>' + spellData.name + '</p>';
-
-        document.getElementById(currentSelectedSpells[currentSelectedSpells.length - 1].name).addEventListener("click", () =>{
+        selectedSpellsElements.push(spellData.index);
+        selectedSpells.innerHTML += '<section id="' + spellData.index + '"class="Screen">';
+        document.getElementById(spellData.index).innerHTML += '<p>' + spellData.name + '</p><p>' + spellData.desc + '</p><input type="button" name="' + spellData.index + spellData.name + '" id="' + spellData.index + spellData.name + '" value="Remove">';
+        document.getElementById(spellData.index + spellData.name).addEventListener("click", () => {
             RemoveSpell(currentSelectedSpells.length - 1);
         });
     });
 }
 
-function RemoveSpell(spellNum){
-    let spell = currentSelectedSpells.pop(currentSelectedSpells[spellNum]);
-    let button = selectedSpellsButton.pop(selectedSpellsButton[spellNum]);
-    selectedSpells.remove(spell);
-    selectedSpells.remove(button);
+function RemoveSpell(spellNum) {
+    currentSelectedSpells.pop(currentSelectedSpells[spellNum]);
+    let button = selectedSpellsElements.pop(selectedSpellsElements[spellNum]);
+    for (let node of selectedSpells.childNodes) {
+        if (node.id == button) {
+            selectedSpells.removeChild(node);
+        }
+    }
 }
 
 async function GetSkills() {
@@ -232,7 +277,15 @@ function SetSelectionBox(id, content) {
 async function GetRaceData(race) {
     let raceData = await fetch('https://www.dnd5eapi.co' + race.url);
     raceData = await raceData.json();
+    raceDesc.innerHTML = '<p>' + raceData.alignment + '</p><p>' + raceData.size_description + '</p>';
     return raceData;
+}
+
+function CheckABScores(scoreElement) {
+    if (scoreElement.value < 0 || scoreElement.value > 20) {
+        scoreElement.value = 0;
+        abScoreHelp.className = "visible";
+    }
 }
 
 async function GetSubRaceData(subrace) {
@@ -266,16 +319,43 @@ function ChangeRace() {
     }
 }
 
-async function SaveCharacter() {
-    let character = new Character(currentClass, currentSubclass, currentRace, currentSubRace, currentBackground, bondBox.value, flawBox.value, idealBox.value, traitBox.value);
+function SaveCharacter() {
+    if (saveScreenButton.className == "Selected") {
+        saveScreenButton.className = '';
+        saveSection.className = 'notVisible';
+        ChangeSelection(statsButton, basicSection);
+        return;
+    }
+    else {
+        saveScreenButton.className = "Selected";
+        currentlySelected.className = "";
+        currentlySelected = saveScreenButton;
+        basicSection.className = "visible Screen";
+        backgroundSection.className = "visible Screen";
+        saveSection.className = "visible Screen";
+        if (spellsButton.className != "notVisible") {
+            spellsSection.className = "visible Screen";
+        }
+    }
+}
+
+async function localSave(event) {
+    event.preventDefault();
+    abScores.push(strScore.value, dexScore.value, conScore.value, intScore.value, wisScore.value, chaScore.value);
+    let character = new Character(abScores, nameInput.value, currentClass, currentClassFeatures, currentSubclass, currentRace, currentSubRace, currentBackground, bondBox.value, flawBox.value, idealBox.value, traitBox.value, currentSelectedSpells);
     await character.Constructor(skillList);
-    character.SaveCharacter(localStorage);
+    storage.push(character);
+    let toStore = JSON.stringify(storage);
+    localStorage.setItem("DnDCharacterList", toStore);
 }
 
 function ChangeSelection(newSelection, targetSection) {
     if (currentlySelected != newSelection) {
+        basicSection.className = "notVisible";
+        backgroundSection.className = "notVisible";
+        spellsSection.className = "notVisible";
+        saveSection.className = "notVisible";
         currentlySelected.className = "";
-        currentSection.className = "notVisible";
         newSelection.className = "Selected";
         currentlySelected = newSelection;
         currentSection = targetSection;
@@ -283,27 +363,33 @@ function ChangeSelection(newSelection, targetSection) {
     }
 }
 
+async function SetUpAPI() {
+    form.className = "Loading";
+    console.log(await fetch('https://www.dnd5eapi.co/').failed);
+    try {
+        await fetch('https://www.dnd5eapi.co/')
+        await InitialSetup().then(result => {
+            form.className = '';
+            currentClass = result[0];
+            currentRace = result[1];
+            currentSubclass = result[2];
 
-if(!fetch('https://www.dnd5eapi.co/').failed){
-    serverAvailable = true;
+            classList = result[3];
+            raceList = result[4];
+            subClassList = result[5];
+            skillList = result[6];
+            backgroundList = result[7];
+            currentBackground = result[8];
+
+            if (currentClass.spells != null) {
+                spellsButton.className = "visible";
+            }
+        });
+    }
+    catch (error) {
+        document.getElementById("Forms").className = "notVisible";
+        noAPISection.className = "visible";
+    }
 }
 
-
-if(serverAvailable){
-    InitialSetup().then(result => {
-        currentClass = result[0];
-        currentRace = result[1];
-        currentSubclass = result[2];
-    
-        classList = result[3];
-        raceList = result[4];
-        subClassList = result[5];
-        skillList = result[6];
-        backgroundList = result[7];
-        currentBackground = result[8];
-
-        if(currentClass.spells !=null){
-            spellsButton.className = "visible";
-        }
-    });
-}
+SetUpAPI();

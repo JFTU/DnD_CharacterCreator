@@ -1,22 +1,17 @@
-h2{
-    margin-bottom: 0.5rem;
-}
-
 .Scores{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column-reverse wrap;
     width: min-content;
     margin: 0;
+    border-color: darkgrey;
+    border-style: dashed;
+    padding: 0.3rem;
 }
 
 .ScoreTable{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    width: 100%;
-}
-
-table{
     width: 100%;
 }
 
@@ -27,6 +22,11 @@ table{
 #Content{
     display: flex;
     flex-flow: column nowrap;
+    width: 100%;
+}
+
+.DeleteButton{
+    background-color: rgb(197, 17, 17);
 }
 
 h3{
@@ -39,5 +39,15 @@ p{
     margin: 0.1rem;
 }
 
+.dataVisible {
+    display: flex;
+    flex-flow: column;
+}
+
+#BottomScreenButtons{
+    margin-top: 0;
+    display: flex;
+    margin-bottom: 1rem;
+}
 
 

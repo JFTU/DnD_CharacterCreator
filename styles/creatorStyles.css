@@ -1,4 +1,9 @@
-#StrStat, #DexStat, #ConStat, #IntStat, #WisStat, #ChaStat {
+#StrStat,
+#DexStat,
+#ConStat,
+#IntStat,
+#WisStat,
+#ChaStat {
     border-radius: 1rem;
     width: 2rem;
     text-align: center;
@@ -13,11 +18,13 @@
 // URL: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
 // Date Accessed: 16/04/2023
 */
-input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-input[type=number]{
+input[type=number] {
+    appearance: none;
     -moz-appearance: none;
 }
 
@@ -25,29 +32,30 @@ input[type=number]{
 // End of cited code
 */
 
-form section div{
-    width: 50%;
-    display: flex;
-}
-
-#AbilityScoreInput{
+#AbilityScoreInput {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
-select{
+.Loading{
+    cursor: progress;
+}
+
+select {
     width: 100%;
     height: 2em;
     text-overflow: ellipsis;
     margin-top: 1em;
     margin-bottom: 1em;
     cursor: pointer;
-    outline-style:solid;
+    outline-style: solid;
     outline-color: grey;
     outline-width: 0.1rem;
 }
 
-form{
+form {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;

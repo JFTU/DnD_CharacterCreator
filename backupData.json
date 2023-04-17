@@ -1,0 +1,1622 @@
+[
+    {
+        "name": "Jerome",
+        "race": {
+            "index": "elf",
+            "name": "Elf",
+            "speed": 30,
+            "ability_bonuses": [
+                {
+                    "ability_score": {
+                        "index": "dex",
+                        "name": "DEX",
+                        "url": "/api/ability-scores/dex"
+                    },
+                    "bonus": 2
+                }
+            ],
+            "age": "Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
+            "alignment": "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not.",
+            "size": "Medium",
+            "size_description": "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
+            "starting_proficiencies": [
+                {
+                    "index": "skill-perception",
+                    "name": "Skill: Perception",
+                    "url": "/api/proficiencies/skill-perception"
+                }
+            ],
+            "languages": [
+                {
+                    "index": "common",
+                    "name": "Common",
+                    "url": "/api/languages/common"
+                },
+                {
+                    "index": "elvish",
+                    "name": "Elvish",
+                    "url": "/api/languages/elvish"
+                }
+            ],
+            "language_desc": "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires.",
+            "traits": [
+                {
+                    "index": "darkvision",
+                    "name": "Darkvision",
+                    "url": "/api/traits/darkvision"
+                },
+                {
+                    "index": "fey-ancestry",
+                    "name": "Fey Ancestry",
+                    "url": "/api/traits/fey-ancestry"
+                },
+                {
+                    "index": "trance",
+                    "name": "Trance",
+                    "url": "/api/traits/trance"
+                },
+                {
+                    "index": "keen-senses",
+                    "name": "Keen Senses",
+                    "url": "/api/traits/keen-senses"
+                }
+            ],
+            "subraces": [
+                {
+                    "index": "high-elf",
+                    "name": "High Elf",
+                    "url": "/api/subraces/high-elf"
+                }
+            ],
+            "url": "/api/races/elf"
+        },
+        "subRace": {
+            "index": "high-elf",
+            "name": "High Elf",
+            "race": {
+                "index": "elf",
+                "name": "Elf",
+                "url": "/api/races/elf"
+            },
+            "desc": "As a high elf, you have a keen mind and a mastery of at least the basics of magic. In many fantasy gaming worlds, there are two kinds of high elves. One type is haughty and reclusive, believing themselves to be superior to non-elves and even other elves. The other type is more common and more friendly, and often encountered among humans and other races.",
+            "ability_bonuses": [
+                {
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "bonus": 1
+                }
+            ],
+            "starting_proficiencies": [
+                {
+                    "index": "longswords",
+                    "name": "Longswords",
+                    "url": "/api/proficiencies/longswords"
+                },
+                {
+                    "index": "shortswords",
+                    "name": "Shortswords",
+                    "url": "/api/proficiencies/shortswords"
+                },
+                {
+                    "index": "shortbows",
+                    "name": "Shortbows",
+                    "url": "/api/proficiencies/shortbows"
+                },
+                {
+                    "index": "longbows",
+                    "name": "Longbows",
+                    "url": "/api/proficiencies/longbows"
+                }
+            ],
+            "languages": [],
+            "language_options": {
+                "choose": 1,
+                "from": {
+                    "option_set_type": "options_array",
+                    "options": [
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "dwarvish",
+                                "name": "Dwarvish",
+                                "url": "/api/languages/dwarvish"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "giant",
+                                "name": "Giant",
+                                "url": "/api/languages/giant"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "gnomish",
+                                "name": "Gnomish",
+                                "url": "/api/languages/gnomish"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "goblin",
+                                "name": "Goblin",
+                                "url": "/api/languages/goblin"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "halfling",
+                                "name": "Halfling",
+                                "url": "/api/languages/halfling"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "orc",
+                                "name": "Orc",
+                                "url": "/api/languages/orc"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "abyssal",
+                                "name": "Abyssal",
+                                "url": "/api/languages/abyssal"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "celestial",
+                                "name": "Celestial",
+                                "url": "/api/languages/celestial"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "draconic",
+                                "name": "Draconic",
+                                "url": "/api/languages/draconic"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "deep-speech",
+                                "name": "Deep Speech",
+                                "url": "/api/languages/deep-speech"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "infernal",
+                                "name": "Infernal",
+                                "url": "/api/languages/infernal"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "primordial",
+                                "name": "Primordial",
+                                "url": "/api/languages/primordial"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "sylvan",
+                                "name": "Sylvan",
+                                "url": "/api/languages/sylvan"
+                            }
+                        },
+                        {
+                            "option_type": "reference",
+                            "item": {
+                                "index": "undercommon",
+                                "name": "Undercommon",
+                                "url": "/api/languages/undercommon"
+                            }
+                        }
+                    ]
+                },
+                "type": "language"
+            },
+            "racial_traits": [
+                {
+                    "index": "elf-weapon-training",
+                    "name": "Elf Weapon Training",
+                    "url": "/api/traits/elf-weapon-training"
+                },
+                {
+                    "index": "high-elf-cantrip",
+                    "name": "High Elf Cantrip",
+                    "url": "/api/traits/high-elf-cantrip"
+                },
+                {
+                    "index": "extra-language",
+                    "name": "Extra Language",
+                    "url": "/api/traits/extra-language"
+                }
+            ],
+            "url": "/api/subraces/high-elf"
+        },
+        "charClass": {
+            "index": "paladin",
+            "name": "Paladin",
+            "hit_die": 10,
+            "proficiency_choices": [
+                {
+                    "desc": "Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion",
+                    "choose": 2,
+                    "type": "proficiencies",
+                    "from": {
+                        "option_set_type": "options_array",
+                        "options": [
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-athletics",
+                                    "name": "Skill: Athletics",
+                                    "url": "/api/proficiencies/skill-athletics"
+                                }
+                            },
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-insight",
+                                    "name": "Skill: Insight",
+                                    "url": "/api/proficiencies/skill-insight"
+                                }
+                            },
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-intimidation",
+                                    "name": "Skill: Intimidation",
+                                    "url": "/api/proficiencies/skill-intimidation"
+                                }
+                            },
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-medicine",
+                                    "name": "Skill: Medicine",
+                                    "url": "/api/proficiencies/skill-medicine"
+                                }
+                            },
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-persuasion",
+                                    "name": "Skill: Persuasion",
+                                    "url": "/api/proficiencies/skill-persuasion"
+                                }
+                            },
+                            {
+                                "option_type": "reference",
+                                "item": {
+                                    "index": "skill-religion",
+                                    "name": "Skill: Religion",
+                                    "url": "/api/proficiencies/skill-religion"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "proficiencies": [
+                {
+                    "index": "all-armor",
+                    "name": "All armor",
+                    "url": "/api/proficiencies/all-armor"
+                },
+                {
+                    "index": "shields",
+                    "name": "Shields",
+                    "url": "/api/proficiencies/shields"
+                },
+                {
+                    "index": "simple-weapons",
+                    "name": "Simple Weapons",
+                    "url": "/api/proficiencies/simple-weapons"
+                },
+                {
+                    "index": "martial-weapons",
+                    "name": "Martial Weapons",
+                    "url": "/api/proficiencies/martial-weapons"
+                },
+                {
+                    "index": "saving-throw-wis",
+                    "name": "Saving Throw: WIS",
+                    "url": "/api/proficiencies/saving-throw-wis"
+                },
+                {
+                    "index": "saving-throw-cha",
+                    "name": "Saving Throw: CHA",
+                    "url": "/api/proficiencies/saving-throw-cha"
+                }
+            ],
+            "saving_throws": [
+                {
+                    "index": "wis",
+                    "name": "WIS",
+                    "url": "/api/ability-scores/wis"
+                },
+                {
+                    "index": "cha",
+                    "name": "CHA",
+                    "url": "/api/ability-scores/cha"
+                }
+            ],
+            "starting_equipment": [
+                {
+                    "equipment": {
+                        "index": "chain-mail",
+                        "name": "Chain Mail",
+                        "url": "/api/equipment/chain-mail"
+                    },
+                    "quantity": 1
+                }
+            ],
+            "starting_equipment_options": [
+                {
+                    "desc": "(a) a martial weapon and a shield or (b) two martial weapons",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                        "option_set_type": "options_array",
+                        "options": [
+                            {
+                                "option_type": "multiple",
+                                "items": [
+                                    {
+                                        "option_type": "choice",
+                                        "choice": {
+                                            "desc": "a martial weapon",
+                                            "choose": 1,
+                                            "type": "equipment",
+                                            "from": {
+                                                "option_set_type": "equipment_category",
+                                                "equipment_category": {
+                                                    "name": "Martial Weapons",
+                                                    "index": "martial-weapons",
+                                                    "url": "/api/equipment-categories/martial-weapons"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "option_type": "counted_reference",
+                                        "count": 1,
+                                        "of": {
+                                            "index": "shield",
+                                            "name": "Shield",
+                                            "url": "/api/equipment/shield"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "option_type": "choice",
+                                "choice": {
+                                    "desc": "two martial weapons",
+                                    "choose": 2,
+                                    "type": "equipment",
+                                    "from": {
+                                        "option_set_type": "equipment_category",
+                                        "equipment_category": {
+                                            "index": "martial-weapons",
+                                            "name": "Martial Weapons",
+                                            "url": "/api/equipment-categories/martial-weapons"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "desc": "(a) five javelins or (b) any simple melee weapon",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                        "option_set_type": "options_array",
+                        "options": [
+                            {
+                                "option_type": "counted_reference",
+                                "count": 5,
+                                "of": {
+                                    "index": "javelin",
+                                    "name": "Javelin",
+                                    "url": "/api/equipment/javelin"
+                                }
+                            },
+                            {
+                                "option_type": "choice",
+                                "choice": {
+                                    "desc": "any simple weapon",
+                                    "choose": 1,
+                                    "type": "equipment",
+                                    "from": {
+                                        "option_set_type": "equipment_category",
+                                        "equipment_category": {
+                                            "index": "simple-weapons",
+                                            "name": "Simple Weapons",
+                                            "url": "/api/equipment-categories/simple-weapons"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "desc": "(a) a priest’s pack or (b) an explorer’s pack",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                        "option_set_type": "options_array",
+                        "options": [
+                            {
+                                "option_type": "counted_reference",
+                                "count": 1,
+                                "of": {
+                                    "index": "priests-pack",
+                                    "name": "Priest's Pack",
+                                    "url": "/api/equipment/priests-pack"
+                                }
+                            },
+                            {
+                                "option_type": "counted_reference",
+                                "count": 1,
+                                "of": {
+                                    "index": "explorers-pack",
+                                    "name": "Explorer's Pack",
+                                    "url": "/api/equipment/explorers-pack"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "desc": "holy symbol",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                        "option_set_type": "equipment_category",
+                        "equipment_category": {
+                            "index": "holy-symbols",
+                            "name": "Holy Symbols",
+                            "url": "/api/equipment-categories/holy-symbols"
+                        }
+                    }
+                }
+            ],
+            "class_levels": "/api/classes/paladin/levels",
+            "multi_classing": {
+                "prerequisites": [
+                    {
+                        "ability_score": {
+                            "index": "str",
+                            "name": "STR",
+                            "url": "/api/ability-scores/str"
+                        },
+                        "minimum_score": 13
+                    },
+                    {
+                        "ability_score": {
+                            "index": "cha",
+                            "name": "CHA",
+                            "url": "/api/ability-scores/cha"
+                        },
+                        "minimum_score": 13
+                    }
+                ],
+                "proficiencies": [
+                    {
+                        "index": "light-armor",
+                        "name": "Light Armor",
+                        "url": "/api/proficiencies/light-armor"
+                    },
+                    {
+                        "index": "medium-armor",
+                        "name": "Medium Armor",
+                        "url": "/api/proficiencies/medium-armor"
+                    },
+                    {
+                        "index": "shields",
+                        "name": "Shields",
+                        "url": "/api/proficiencies/shields"
+                    },
+                    {
+                        "index": "simple-weapons",
+                        "name": "Simple Weapons",
+                        "url": "/api/proficiencies/simple-weapons"
+                    },
+                    {
+                        "index": "martial-weapons",
+                        "name": "Martial Weapons",
+                        "url": "/api/proficiencies/martial-weapons"
+                    }
+                ]
+            },
+            "subclasses": [
+                {
+                    "index": "devotion",
+                    "name": "Devotion",
+                    "url": "/api/subclasses/devotion"
+                }
+            ],
+            "spellcasting": {
+                "level": 2,
+                "spellcasting_ability": {
+                    "index": "cha",
+                    "name": "CHA",
+                    "url": "/api/ability-scores/cha"
+                },
+                "info": [
+                    {
+                        "name": "Preparing and Casting Spells",
+                        "desc": [
+                            "The Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
+                            "You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.",
+                            "For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd- level slot. Casting the spell doesn't remove it from your list of prepared spells.",
+                            "You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list."
+                        ]
+                    },
+                    {
+                        "name": "Spellcasting Ability",
+                        "desc": [
+                            "Charisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.",
+                            "Spell save DC = 8 + your proficiency bonus + your Charisma modifier.",
+                            "Spell attack modifier = your proficiency bonus + your Charisma modifier."
+                        ]
+                    },
+                    {
+                        "name": "Spellcasting Focus",
+                        "desc": [
+                            "You can use a holy symbol as a spellcasting focus for your paladin spells."
+                        ]
+                    }
+                ]
+            },
+            "spells": "/api/classes/paladin/spells",
+            "url": "/api/classes/paladin"
+        },
+        "charClassFeatures": [
+            {
+                "index": "divine-sense",
+                "class": {
+                    "index": "paladin",
+                    "name": "Paladin",
+                    "url": "/api/classes/paladin"
+                },
+                "name": "Divine Sense",
+                "level": 1,
+                "prerequisites": [],
+                "desc": [
+                    "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.",
+                    "You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."
+                ],
+                "url": "/api/features/divine-sense"
+            },
+            {
+                "index": "lay-on-hands",
+                "class": {
+                    "index": "paladin",
+                    "name": "Paladin",
+                    "url": "/api/classes/paladin"
+                },
+                "name": "Lay on Hands",
+                "level": 1,
+                "prerequisites": [],
+                "desc": [
+                    "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5.",
+                    "As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.",
+                    "Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.",
+                    "This feature has no effect on undead and constructs."
+                ],
+                "url": "/api/features/lay-on-hands"
+            }
+        ],
+        "subClass": {
+            "index": "devotion",
+            "class": {
+                "index": "paladin",
+                "name": "Paladin",
+                "url": "/api/classes/paladin"
+            },
+            "name": "Devotion",
+            "subclass_flavor": "Sacred Oath",
+            "desc": [
+                "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels--the perfect servants of good--as their ideals, and incorporate images of angelic wings into their helmets or coats of arms."
+            ],
+            "spells": [
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-3",
+                            "type": "level",
+                            "name": "Paladin 3",
+                            "url": "/api/classes/paladin/levels/3"
+                        }
+                    ],
+                    "spell": {
+                        "index": "protection-from-evil-and-good",
+                        "name": "Protection from Evil and Good",
+                        "url": "/api/spells/protection-from-evil-and-good"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-3",
+                            "type": "level",
+                            "name": "Paladin 3",
+                            "url": "/api/classes/paladin/levels/3"
+                        }
+                    ],
+                    "spell": {
+                        "index": "sanctuary",
+                        "name": "Sanctuary",
+                        "url": "/api/spells/sanctuary"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-5",
+                            "type": "level",
+                            "name": "Paladin 5",
+                            "url": "/api/classes/paladin/levels/5"
+                        }
+                    ],
+                    "spell": {
+                        "index": "lesser-restoration",
+                        "name": "Lesser Restoration",
+                        "url": "/api/spells/lesser-restoration"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-5",
+                            "type": "level",
+                            "name": "Paladin 5",
+                            "url": "/api/classes/paladin/levels/5"
+                        }
+                    ],
+                    "spell": {
+                        "index": "zone-of-truth",
+                        "name": "Zone of Truth",
+                        "url": "/api/spells/zone-of-truth"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-9",
+                            "type": "level",
+                            "name": "Paladin 9",
+                            "url": "/api/classes/paladin/levels/9"
+                        }
+                    ],
+                    "spell": {
+                        "index": "beacon-of-hope",
+                        "name": "Beacon of Hope",
+                        "url": "/api/spells/beacon-of-hope"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-9",
+                            "type": "level",
+                            "name": "Paladin 9",
+                            "url": "/api/classes/paladin/levels/9"
+                        }
+                    ],
+                    "spell": {
+                        "index": "dispel-magic",
+                        "name": "Dispel Magic",
+                        "url": "/api/spells/dispel-magic"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-13",
+                            "type": "level",
+                            "name": "Paladin 13",
+                            "url": "/api/classes/paladin/levels/13"
+                        }
+                    ],
+                    "spell": {
+                        "index": "freedom-of-movement",
+                        "name": "Freedom of Movement",
+                        "url": "/api/spells/freedom-of-movement"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-13",
+                            "type": "level",
+                            "name": "Paladin 13",
+                            "url": "/api/classes/paladin/levels/13"
+                        }
+                    ],
+                    "spell": {
+                        "index": "guardian-of-faith",
+                        "name": "Guardian of Faith",
+                        "url": "/api/spells/guardian-of-faith"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-17",
+                            "type": "level",
+                            "name": "Paladin 17",
+                            "url": "/api/classes/paladin/levels/17"
+                        }
+                    ],
+                    "spell": {
+                        "index": "commune",
+                        "name": "Commune",
+                        "url": "/api/spells/commune"
+                    }
+                },
+                {
+                    "prerequisites": [
+                        {
+                            "index": "paladin-17",
+                            "type": "level",
+                            "name": "Paladin 17",
+                            "url": "/api/classes/paladin/levels/17"
+                        }
+                    ],
+                    "spell": {
+                        "index": "flame-strike",
+                        "name": "Flame Strike",
+                        "url": "/api/spells/flame-strike"
+                    }
+                }
+            ],
+            "subclass_levels": "/api/subclasses/devotion/levels",
+            "url": "/api/subclasses/devotion"
+        },
+        "abScores": [
+            {
+                "name": "STR",
+                "score": "16",
+                "modifier": 3
+            },
+            {
+                "name": "DEX",
+                "score": 8,
+                "modifier": -1
+            },
+            {
+                "name": "CON",
+                "score": "14",
+                "modifier": 2
+            },
+            {
+                "name": "INT",
+                "score": 11,
+                "modifier": 0
+            },
+            {
+                "name": "WIS",
+                "score": "7",
+                "modifier": -2
+            },
+            {
+                "name": "CHA",
+                "score": "16",
+                "modifier": 3
+            }
+        ],
+        "skills": [
+            {
+                "name": "Acrobatics",
+                "skillData": {
+                    "index": "acrobatics",
+                    "name": "Acrobatics",
+                    "desc": [
+                        "Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
+                    ],
+                    "ability_score": {
+                        "index": "dex",
+                        "name": "DEX",
+                        "url": "/api/ability-scores/dex"
+                    },
+                    "url": "/api/skills/acrobatics"
+                },
+                "modifier": -1
+            },
+            {
+                "name": "Animal Handling",
+                "skillData": {
+                    "index": "animal-handling",
+                    "name": "Animal Handling",
+                    "desc": [
+                        "When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver."
+                    ],
+                    "ability_score": {
+                        "index": "wis",
+                        "name": "WIS",
+                        "url": "/api/ability-scores/wis"
+                    },
+                    "url": "/api/skills/animal-handling"
+                },
+                "modifier": -2
+            },
+            {
+                "name": "Arcana",
+                "skillData": {
+                    "index": "arcana",
+                    "name": "Arcana",
+                    "desc": [
+                        "Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
+                    ],
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "url": "/api/skills/arcana"
+                },
+                "modifier": 0
+            },
+            {
+                "name": "Athletics",
+                "skillData": {
+                    "index": "athletics",
+                    "name": "Athletics",
+                    "desc": [
+                        "Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming."
+                    ],
+                    "ability_score": {
+                        "index": "str",
+                        "name": "STR",
+                        "url": "/api/ability-scores/str"
+                    },
+                    "url": "/api/skills/athletics"
+                },
+                "modifier": 3
+            },
+            {
+                "name": "Deception",
+                "skillData": {
+                    "index": "deception",
+                    "name": "Deception",
+                    "desc": [
+                        "Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast- talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
+                    ],
+                    "ability_score": {
+                        "index": "cha",
+                        "name": "CHA",
+                        "url": "/api/ability-scores/cha"
+                    },
+                    "url": "/api/skills/deception"
+                },
+                "modifier": 3
+            },
+            {
+                "name": "History",
+                "skillData": {
+                    "index": "history",
+                    "name": "History",
+                    "desc": [
+                        "Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
+                    ],
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "url": "/api/skills/history"
+                },
+                "modifier": 0
+            },
+            {
+                "name": "Insight",
+                "skillData": {
+                    "index": "insight",
+                    "name": "Insight",
+                    "desc": [
+                        "Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms."
+                    ],
+                    "ability_score": {
+                        "index": "wis",
+                        "name": "WIS",
+                        "url": "/api/ability-scores/wis"
+                    },
+                    "url": "/api/skills/insight"
+                },
+                "modifier": -2
+            },
+            {
+                "name": "Intimidation",
+                "skillData": {
+                    "index": "intimidation",
+                    "name": "Intimidation",
+                    "desc": [
+                        "When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
+                    ],
+                    "ability_score": {
+                        "index": "cha",
+                        "name": "CHA",
+                        "url": "/api/ability-scores/cha"
+                    },
+                    "url": "/api/skills/intimidation"
+                },
+                "modifier": 3
+            },
+            {
+                "name": "Investigation",
+                "skillData": {
+                    "index": "investigation",
+                    "name": "Investigation",
+                    "desc": [
+                        "When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check."
+                    ],
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "url": "/api/skills/investigation"
+                },
+                "modifier": 0
+            },
+            {
+                "name": "Medicine",
+                "skillData": {
+                    "index": "medicine",
+                    "name": "Medicine",
+                    "desc": [
+                        "A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness."
+                    ],
+                    "ability_score": {
+                        "index": "wis",
+                        "name": "WIS",
+                        "url": "/api/ability-scores/wis"
+                    },
+                    "url": "/api/skills/medicine"
+                },
+                "modifier": -2
+            },
+            {
+                "name": "Nature",
+                "skillData": {
+                    "index": "nature",
+                    "name": "Nature",
+                    "desc": [
+                        "Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles."
+                    ],
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "url": "/api/skills/nature"
+                },
+                "modifier": 0
+            },
+            {
+                "name": "Perception",
+                "skillData": {
+                    "index": "perception",
+                    "name": "Perception",
+                    "desc": [
+                        "Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door."
+                    ],
+                    "ability_score": {
+                        "index": "wis",
+                        "name": "WIS",
+                        "url": "/api/ability-scores/wis"
+                    },
+                    "url": "/api/skills/perception"
+                },
+                "modifier": -2
+            },
+            {
+                "name": "Performance",
+                "skillData": {
+                    "index": "performance",
+                    "name": "Performance",
+                    "desc": [
+                        "Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
+                    ],
+                    "ability_score": {
+                        "index": "cha",
+                        "name": "CHA",
+                        "url": "/api/ability-scores/cha"
+                    },
+                    "url": "/api/skills/performance"
+                },
+                "modifier": 3
+            },
+            {
+                "name": "Persuasion",
+                "skillData": {
+                    "index": "persuasion",
+                    "name": "Persuasion",
+                    "desc": [
+                        "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk."
+                    ],
+                    "ability_score": {
+                        "index": "cha",
+                        "name": "CHA",
+                        "url": "/api/ability-scores/cha"
+                    },
+                    "url": "/api/skills/persuasion"
+                },
+                "modifier": 3
+            },
+            {
+                "name": "Religion",
+                "skillData": {
+                    "index": "religion",
+                    "name": "Religion",
+                    "desc": [
+                        "Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults."
+                    ],
+                    "ability_score": {
+                        "index": "int",
+                        "name": "INT",
+                        "url": "/api/ability-scores/int"
+                    },
+                    "url": "/api/skills/religion"
+                },
+                "modifier": 0
+            },
+            {
+                "name": "Sleight of Hand",
+                "skillData": {
+                    "index": "sleight-of-hand",
+                    "name": "Sleight of Hand",
+                    "desc": [
+                        "Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."
+                    ],
+                    "ability_score": {
+                        "index": "dex",
+                        "name": "DEX",
+                        "url": "/api/ability-scores/dex"
+                    },
+                    "url": "/api/skills/sleight-of-hand"
+                },
+                "modifier": -1
+            },
+            {
+                "name": "Stealth",
+                "skillData": {
+                    "index": "stealth",
+                    "name": "Stealth",
+                    "desc": [
+                        "Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
+                    ],
+                    "ability_score": {
+                        "index": "dex",
+                        "name": "DEX",
+                        "url": "/api/ability-scores/dex"
+                    },
+                    "url": "/api/skills/stealth"
+                },
+                "modifier": -1
+            },
+            {
+                "name": "Survival",
+                "skillData": {
+                    "index": "survival",
+                    "name": "Survival",
+                    "desc": [
+                        "The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards."
+                    ],
+                    "ability_score": {
+                        "index": "wis",
+                        "name": "WIS",
+                        "url": "/api/ability-scores/wis"
+                    },
+                    "url": "/api/skills/survival"
+                },
+                "modifier": -2
+            }
+        ],
+        "proficienyBonus": 2,
+        "background": {
+            "index": "acolyte",
+            "name": "Acolyte",
+            "starting_proficiencies": [
+                {
+                    "index": "skill-insight",
+                    "name": "Skill: Insight",
+                    "url": "/api/proficiencies/skill-insight"
+                },
+                {
+                    "index": "skill-religion",
+                    "name": "Skill: Religion",
+                    "url": "/api/proficiencies/skill-religion"
+                }
+            ],
+            "language_options": {
+                "choose": 2,
+                "type": "languages",
+                "from": {
+                    "option_set_type": "resource_list",
+                    "resource_list_url": "/api/languages"
+                }
+            },
+            "starting_equipment": [
+                {
+                    "equipment": {
+                        "index": "clothes-common",
+                        "name": "Clothes, common",
+                        "url": "/api/equipment/clothes-common"
+                    },
+                    "quantity": 1
+                },
+                {
+                    "equipment": {
+                        "index": "pouch",
+                        "name": "Pouch",
+                        "url": "/api/equipment/pouch"
+                    },
+                    "quantity": 1
+                }
+            ],
+            "starting_equipment_options": [
+                {
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                        "option_set_type": "equipment_category",
+                        "equipment_category": {
+                            "index": "holy-symbols",
+                            "name": "Holy Symbols",
+                            "url": "/api/equipment-categories/holy-symbols"
+                        }
+                    }
+                }
+            ],
+            "feature": {
+                "name": "Shelter of the Faithful",
+                "desc": [
+                    "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.",
+                    "You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
+                ]
+            },
+            "personality_traits": {
+                "choose": 2,
+                "type": "personality_traits",
+                "from": {
+                    "option_set_type": "options_array",
+                    "options": [
+                        {
+                            "option_type": "string",
+                            "string": "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I can find common ground between the fiercest enemies, empathizing with them and always working toward peace."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I see omens in every event and action. The gods try to speak to us, we just need to listen."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "Nothing can shake my optimistic attitude."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I quote (or misquote) sacred texts and proverbs in almost every situation."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I've spent so long in the temple that I have little practical experience dealing with people in the outside world."
+                        }
+                    ]
+                }
+            },
+            "ideals": {
+                "choose": 1,
+                "type": "ideals",
+                "from": {
+                    "option_set_type": "options_array",
+                    "options": [
+                        {
+                            "option_type": "ideal",
+                            "desc": "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.",
+                            "alignments": [
+                                {
+                                    "index": "lawful-good",
+                                    "name": "Lawful Good",
+                                    "url": "/api/alignments/lawful-good"
+                                },
+                                {
+                                    "index": "lawful-neutral",
+                                    "name": "Lawful Neutral",
+                                    "url": "/api/alignments/lawful-neutral"
+                                },
+                                {
+                                    "index": "lawful-evil",
+                                    "name": "Lawful Evil",
+                                    "url": "/api/alignments/lawful-evil"
+                                }
+                            ]
+                        },
+                        {
+                            "option_type": "ideal",
+                            "desc": "Charity. I always try to help those in need, no matter what the personal cost.",
+                            "alignments": [
+                                {
+                                    "index": "lawful-good",
+                                    "name": "Lawful Good",
+                                    "url": "/api/alignments/lawful-good"
+                                },
+                                {
+                                    "index": "neutral-good",
+                                    "name": "Neutral Good",
+                                    "url": "/api/alignments/neutral-good"
+                                },
+                                {
+                                    "index": "chaotic-good",
+                                    "name": "Chaotic Good",
+                                    "url": "/api/alignments/chaotic-good"
+                                }
+                            ]
+                        },
+                        {
+                            "option_type": "ideal",
+                            "desc": "Change. We must help bring about the changes the gods are constantly working in the world.",
+                            "alignments": [
+                                {
+                                    "index": "chaotic-good",
+                                    "name": "Chaotic Good",
+                                    "url": "/api/alignments/chaotic-good"
+                                },
+                                {
+                                    "index": "chaotic-neutral",
+                                    "name": "Chaotic Neutral",
+                                    "url": "/api/alignments/chaotic-neutral"
+                                },
+                                {
+                                    "index": "chaotic-evil",
+                                    "name": "Chaotic Evil",
+                                    "url": "/api/alignments/chaotic-evil"
+                                }
+                            ]
+                        },
+                        {
+                            "option_type": "ideal",
+                            "desc": "Power. I hope to one day rise to the top of my faith's religious hierarchy.",
+                            "alignments": [
+                                {
+                                    "index": "lawful-good",
+                                    "name": "Lawful Good",
+                                    "url": "/api/alignments/lawful-good"
+                                },
+                                {
+                                    "index": "lawful-neutral",
+                                    "name": "Lawful Neutral",
+                                    "url": "/api/alignments/lawful-neutral"
+                                },
+                                {
+                                    "index": "lawful-evil",
+                                    "name": "Lawful Evil",
+                                    "url": "/api/alignments/lawful-evil"
+                                }
+                            ]
+                        },
+                        {
+                            "option_type": "ideal",
+                            "desc": "Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.",
+                            "alignments": [
+                                {
+                                    "index": "lawful-good",
+                                    "name": "Lawful Good",
+                                    "url": "/api/alignments/lawful-good"
+                                },
+                                {
+                                    "index": "lawful-neutral",
+                                    "name": "Lawful Neutral",
+                                    "url": "/api/alignments/lawful-neutral"
+                                },
+                                {
+                                    "index": "lawful-evil",
+                                    "name": "Lawful Evil",
+                                    "url": "/api/alignments/lawful-evil"
+                                }
+                            ]
+                        },
+                        {
+                            "option_type": "ideal",
+                            "desc": "Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings.",
+                            "alignments": [
+                                {
+                                    "index": "lawful-good",
+                                    "name": "Lawful Good",
+                                    "url": "/api/alignments/lawful-good"
+                                },
+                                {
+                                    "index": "neutral-good",
+                                    "name": "Neutral Good",
+                                    "url": "/api/alignments/neutral-good"
+                                },
+                                {
+                                    "index": "chaotic-good",
+                                    "name": "Chaotic Good",
+                                    "url": "/api/alignments/chaotic-good"
+                                },
+                                {
+                                    "index": "lawful-neutral",
+                                    "name": "Lawful Neutral",
+                                    "url": "/api/alignments/lawful-neutral"
+                                },
+                                {
+                                    "index": "neutral",
+                                    "name": "Neutral",
+                                    "url": "/api/alignments/neutral"
+                                },
+                                {
+                                    "index": "chaotic-neutral",
+                                    "name": "Chaotic Neutral",
+                                    "url": "/api/alignments/chaotic-neutral"
+                                },
+                                {
+                                    "index": "lawful-evil",
+                                    "name": "Lawful Evil",
+                                    "url": "/api/alignments/lawful-evil"
+                                },
+                                {
+                                    "index": "neutral-evil",
+                                    "name": "Neutral Evil",
+                                    "url": "/api/alignments/neutral-evil"
+                                },
+                                {
+                                    "index": "chaotic-evil",
+                                    "name": "Chaotic Evil",
+                                    "url": "/api/alignments/chaotic-evil"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "bonds": {
+                "choose": 1,
+                "type": "bonds",
+                "from": {
+                    "option_set_type": "options_array",
+                    "options": [
+                        {
+                            "option_type": "string",
+                            "string": "I would die to recover an ancient relic of my faith that was lost long ago."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I will someday get revenge on the corrupt temple hierarchy who branded me a heretic."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I owe my life to the priest who took me in when my parents died."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "Everything I do is for the common people."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I will do anything to protect the temple where I served."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I seek to preserve a sacred text that my enemies consider heretical and seek to destroy."
+                        }
+                    ]
+                }
+            },
+            "flaws": {
+                "choose": 1,
+                "type": "flaws",
+                "from": {
+                    "option_set_type": "options_array",
+                    "options": [
+                        {
+                            "option_type": "string",
+                            "string": "I judge others harshly, and myself even more severely."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I put too much trust in those who wield power within my temple's hierarchy."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "My piety sometimes leads me to blindly trust those that profess faith in my god."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I am inflexible in my thinking."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "I am suspicious of strangers and expect the worst of them."
+                        },
+                        {
+                            "option_type": "string",
+                            "string": "Once I pick a goal, I become obsessed with it to the detriment of everything else in my life."
+                        }
+                    ]
+                }
+            },
+            "url": "/api/backgrounds/acolyte"
+        },
+        "bond": "I will do anything to protect the temple where I served.",
+        "flaw": "My piety sometimes leads me to blindly trust those that profess faith in my god.",
+        "ideal": "Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.",
+        "trait": "I quote (or misquote) sacred texts and proverbs in almost every situation.",
+        "spells": [
+            {
+                "higher_level": [],
+                "index": "protection-from-evil-and-good",
+                "name": "Protection from Evil and Good",
+                "desc": [
+                    "Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.",
+                    "The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect."
+                ],
+                "range": "Touch",
+                "components": [
+                    "V",
+                    "S",
+                    "M"
+                ],
+                "material": "Holy water or powdered silver and iron, which the spell consumes.",
+                "ritual": false,
+                "duration": "Up to 10 minutes",
+                "concentration": true,
+                "casting_time": "1 action",
+                "level": 1,
+                "school": {
+                    "index": "abjuration",
+                    "name": "Abjuration",
+                    "url": "/api/magic-schools/abjuration"
+                },
+                "classes": [
+                    {
+                        "index": "cleric",
+                        "name": "Cleric",
+                        "url": "/api/classes/cleric"
+                    },
+                    {
+                        "index": "paladin",
+                        "name": "Paladin",
+                        "url": "/api/classes/paladin"
+                    },
+                    {
+                        "index": "warlock",
+                        "name": "Warlock",
+                        "url": "/api/classes/warlock"
+                    },
+                    {
+                        "index": "wizard",
+                        "name": "Wizard",
+                        "url": "/api/classes/wizard"
+                    }
+                ],
+                "subclasses": [
+                    {
+                        "index": "lore",
+                        "name": "Lore",
+                        "url": "/api/subclasses/lore"
+                    },
+                    {
+                        "index": "devotion",
+                        "name": "Devotion",
+                        "url": "/api/subclasses/devotion"
+                    }
+                ],
+                "url": "/api/spells/protection-from-evil-and-good"
+            },
+            {
+                "index": "cure-wounds",
+                "name": "Cure Wounds",
+                "desc": [
+                    "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs."
+                ],
+                "higher_level": [
+                    "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st."
+                ],
+                "range": "Touch",
+                "components": [
+                    "V",
+                    "S"
+                ],
+                "ritual": false,
+                "duration": "Instantaneous",
+                "concentration": false,
+                "casting_time": "1 action",
+                "level": 1,
+                "heal_at_slot_level": {
+                    "1": "1d8 + MOD",
+                    "2": "2d8 + MOD",
+                    "3": "3d8 + MOD",
+                    "4": "4d8 + MOD",
+                    "5": "5d8 + MOD",
+                    "6": "6d8 + MOD",
+                    "7": "7d8 + MOD",
+                    "8": "8d8 + MOD",
+                    "9": "9d8 + MOD"
+                },
+                "school": {
+                    "index": "evocation",
+                    "name": "Evocation",
+                    "url": "/api/magic-schools/evocation"
+                },
+                "classes": [
+                    {
+                        "index": "bard",
+                        "name": "Bard",
+                        "url": "/api/classes/bard"
+                    },
+                    {
+                        "index": "cleric",
+                        "name": "Cleric",
+                        "url": "/api/classes/cleric"
+                    },
+                    {
+                        "index": "druid",
+                        "name": "Druid",
+                        "url": "/api/classes/druid"
+                    },
+                    {
+                        "index": "paladin",
+                        "name": "Paladin",
+                        "url": "/api/classes/paladin"
+                    },
+                    {
+                        "index": "ranger",
+                        "name": "Ranger",
+                        "url": "/api/classes/ranger"
+                    }
+                ],
+                "subclasses": [
+                    {
+                        "index": "lore",
+                        "name": "Lore",
+                        "url": "/api/subclasses/lore"
+                    },
+                    {
+                        "index": "life",
+                        "name": "Life",
+                        "url": "/api/subclasses/life"
+                    }
+                ],
+                "url": "/api/spells/cure-wounds"
+            }
+        ]
+    }
+]

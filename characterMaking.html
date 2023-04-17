@@ -5,139 +5,139 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/creatorStyles.css">
+    <link rel="shortcut icon" href="/DnD-Emblem.png" type="image/x-icon">
     <title> Template page</title>
 </head>
 
 <body>
     <header>
-        <h1>Level 1 Character Creator</h1>
+        <h1>Character Maker</h1>
         <nav>
-            <a href="index.html">Home</a> -> <a href="/characterMaking.html">Creator</a>
+            <input type="button" value="Home" id="HomeButton" name="HomeButton">
+            <input type="button" value="Characters" id="CharacterButton" name="CharacterButton">
+            <input type="button" value="Creator" id="CreatorButton" name="CreatorButton">
         </nav>
-
+        <section id="NoAPI" class="notVisible">
+            <h2>The API down</h2>
+            <p>The API seems to be down at the moment, please feel free to view any already made characters <a href="/characterViewing.html">here</a> </p>
+        </section>
     </header>
     <main id="main">
-        <nav id="sideBar">
-            <section id="bar" class="notVisible">
-                <input type="button" value="Home" id="HomeButton" name="HomeButton">
-                <input type="button" value="Characters" id="CharacterButton" name="CharacterButton">
-                <input type="button" value="Creator" id="CreatorButton" name="CreatorButton">
-            </section>
-            <input type="button" value="Open" id="OpenButton">
-        </nav>
-        <section id="Forms">
+        <div id="Forms">
             <nav id="ScreenButtons">
                 <input type="button" value="Stats" id="StatsButton" class="Selected">
                 <input type="button" value="Background" id="BackgroundButton">
-                <input type="button" value="Spells" id="SpellsButton" class = "notVisible">
-                <input type="button" value="All" id="AllButton">
-                <input type="button" value="Edit" id="EditButton">
+                <input type="button" value="Spells" id="SpellsButton" class="notVisible">
+                <input type="button" value="Save" id="SaveScreenButton">
             </nav>
-
-            <section id="CharacterForm" class="visible Screen">
+            <div id="CharacterForm">
                 <form name="Basic" id="Basic">
-                    <label for="NameInput">Character name</label>
-                    <input type="text" name="NameInput" id="NameInput">
-                    <div name="DividerLine" class="dividerLine"></div>
 
-                    <section id="BackgroundSection" class="notVisible Screen">
-                        <h3 id="BackgroundText" name="BackgroundText"></h3>
-                        <p id="FlawText" name="FlawText"></p>
-                        <p id="IdealsText" name="IdealsText"></p>
-                        <p id="TraitText" name="TraitText"></p>
-                        <p></p>
+                    <section class="notVisible" id="SaveForm">
+                        <h2>Save Character</h2>
+                        <input type="submit" value="Save" id="SaveButton">
                     </section>
 
-                    <section id="AbilityScoreInput">
-                        <div>
-                            <label for="StrStat">Strength</label>
-                            <input type="number" name="StrStat" id="StrStat" value="0" max="20" min="0">
+                    <section id="StatsForm" class="visible Screen">
+                        <label for="NameInput">Character name</label>
+                        <input type="text" name="NameInput" id="NameInput" required>
+                        <div class="dividerLine"></div>
+                        <h3>Enter Ability Scores</h3>
+                        <div id="AbilityScoreInput">
+
+                            <div>
+                                <label for="StrStat">Strength</label>
+                                <input type="number" name="StrStat" id="StrStat" value="0" max="20" min="0" required>
+                            </div>
+
+                            <div>
+                                <label for="DexStat">Dexterity</label>
+                                <input type="number" name="DexStat" id="DexStat" value="0" max="20" min="0">
+                            </div>
+
+                            <div>
+                                <label for="ConStat">Constitution</label>
+                                <input type="number" name="ConStat" id="ConStat" value="0" max="20" min="0">
+                            </div>
+
+                            <div>
+                                <label for="IntStat">Intelligence</label>
+                                <input type="number" name="IntStat" id="IntStat" value="0" max="20" min="0">
+                            </div>
+
+                            <div>
+                                <label for="WisStat">Wisdom</label>
+                                <input type="number" name="WisStat" id="WisStat" value="0" max="20" min="0">
+                            </div>
+
+                            <div>
+                                <label for="ChaStat">Charisma</label>
+                                <input type="number" name="ChaStat" id="ChaStat" value="0" max="20" min="0">
+                            </div>
+                            <p id="ABScoreHelp" class="notVisible">Please enter a number between 0 and 18</p>
+
                         </div>
 
-                        <div>
-                            <label for="DexStat">Dexterity</label>
-                            <input type="number" name="DexStat" id="DexStat" value="0" max="20" min="0">
-                        </div>
+                        <div class="dividerLine"></div>
 
-                        <div>
-                            <label for="ConStat">Constitution</label>
-                            <input type="number" name="ConStat" id="ConStat" value="0" max="20" min="0">
-                        </div>
+                        <label for="ClassSelect">Select Class</label>
+                        <select name="ClassSelect" id="ClassSelect"></select>
 
-                        <div>
-                            <label for="IntStat">Intelligence</label>
-                            <input type="number" name="IntStat" id="IntStat" value="0" max="20" min="0">
-                        </div>
+                        <div id="ClassDescription"></div>
 
-                        <div>
-                            <label for="WisStat">Wisdom</label>
-                            <input type="number" name="WisStat" id="WisStat" value="0" max="20" min="0">
-                        </div>
-                        
-                        <div>
-                            <label for="ChaStat">Charisma</label>
-                            <input type="number" name="ChaStat" id="ChaStat" value="0" max="20" min="0">
-                        </div>
+                        <label for="SubClassSelect">Select Subclass</label>
+                        <select name="SubClassSelect" id="SubClassSelect"></select>
 
+                        <div id="SubClassDescription"></div>
+
+                        <label for="RaceSelect">Select Race</label>
+                        <select name="RaceSelect" id="RaceSelect"></select>
+
+                        <div id="RaceDescription"></div>
+
+                        <label for="SubRaceSelect" class="notVisible">Select Subrace</label>
+                        <select name="SubRaceSelect" id="SubRaceSelect" class="notVisible"></select>
                     </section>
 
-                    <div name="DividerLine" class="dividerLine"></div>
+                    <section id="BackgroundForm" class="notVisible">
+                        <h3>Select your Background</h3>
+                        <label for="BackgroundSelect">Backgrounds</label>
+                        <select name="BackgroundSelect" id="BackgroundSelect"></select>
 
-                    <label for="ClassSelect">Class</label>
-                    <select name="ClassSelect" id="ClassSelect"></select>
+                        <div class="dividerLine"></div>
 
-                    <label for="SubClassSelect">Subclass</label>
-                    <select name="SubClassSelect" id="SubClassSelect"></select>
+                        <p id="BackgroundDescription"></p>
 
-                    <label for="RaceSelect">Race</label>
-                    <select name="RaceSelect" id="RaceSelect"></select>
+                        <div class="dividerLine"></div>
 
-                    <label for="SubRaceSelect" class="notVisible">Subrace</label>
-                    <select name="SubRaceSelect" id="SubRaceSelect" class="notVisible"></select>
+                        <label for="BondSelect">Bond</label>
+                        <select name="BondSelect" id="BondSelect"></select>
+
+                        <div class="dividerLine"></div>
+
+                        <label for="FlawSelect">Flaw</label>
+                        <select name="FlawSelect" id="FlawSelect"></select>
+
+                        <div class="dividerLine"></div>
+
+                        <label for="IdealsSelect">Ideals</label>
+                        <select name="IdealsSelect" id="IdealsSelect"></select>
+
+                        <div class="dividerLine"></div>
+
+                        <label for="TraitSelect">Trait</label>
+                        <select name="TraitSelect" id="TraitSelect"></select>
+                    </section>
+                    <section id="SpellsForm" class="notVisible">
+                        <h3>Select your Spells</h3>
+                        <select name="SpellsSelect" id="SpellsSelect"></select>
+                        <ul id="SelectedSpells">
+
+                        </ul>
+                    </section>
                 </form>
-            </section>
-
-            <section id="BackgroundForm" class="notVisible">
-                <form name="CharacterBackground" id="CharacterBackground">
-                    <label for="BackgroundSelect">Personality</label>
-                    <select name="BackgroundSelect" id="BackgroundSelect"></select>
-
-                    <div name="DividerLine" class="dividerLine"></div>
-
-                    <p name="BackgroundDescription" id="BackgroundDescription"></p>
-
-                    <div name="DividerLine" class="dividerLine"></div>
-
-                    <label for="BondSelect">Bond</label>
-                    <select name="BondSelect" id="BondSelect"></select>
-
-                    <div name="DividerLine" class="dividerLine"></div>
-
-                    <label for="FlawSelect">Flaw</label>
-                    <select name="FlawSelect" id="FlawSelect"></select>
-
-                    <div name="DividerLine" class="dividerLine"></div>
-
-                    <label for="IdealsSelect">Ideals</label>
-                    <select name="IdealsSelect" id="IdealsSelect"></select>
-
-                    <div name="DividerLine" class="dividerLine"></div>
-
-                    <label for="TraitSelect">Trait</label>
-                    <select name="TraitSelect" id="TraitSelect"></select>
-                    <section id="Button Area">
-                        <input type="button" name="SaveButton" id="SaveButton" value="Save">
-                    </section>
-                </form>
-            </section>
-
-            <section id="SpellsForm" class="notVisible">
-                <select name="SpellsSelect" id="SpellsSelect"></select>
-                <ul name="SelectedSpells" id="SelectedSpells">
-
-                </ul>
-            </section>
-        </section>
+            </div>
+        </div>
 
     </main>
 

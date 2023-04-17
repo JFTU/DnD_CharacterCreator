@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="/styles/homeStyle.css">
-        <title> Home </title>
-    </head>
 
-    <body>
-        <header>
-            <h1>Dungeons and Dragons Character Creator</h1>
-            <nav>
-                <a href="index.html">Home</a>
-            </nav>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/styles/homeStyle.css">
+    <!--
+    // Description: The favicon code is adapted from the W3 schools example
+    // Author: W3 Schools
+    // URL: https://www.w3schools.com/html/html_favicon.asp
+    // Date Accessed: 17/04/2023
+    -->
+    <link rel="shortcut icon" href="/DnD-Emblem.png" type="image/x-icon">
+    <title> Home </title>
+</head>
 
-        </header>
-        <main id="main">
-            <nav id="sideBar">
-                <section id="bar" class="notVisible">
-                    <input type="button" value="Home" id="HomeButton" name="HomeButton">
-                    <input type="button" value="Characters" id="CharacterButton" name="CharacterButton">
-                    <input type="button" value="Creator" id="CreatorButton" name="CreatorButton">
-                </section>
-                <input type="button" value="Open" id="OpenButton">
-            </nav>
+<body>
+    <header>
+        <h1>Dungeons and Dragons Character Creator</h1>
+        <nav>
+            <input type="button" value="Home" id="HomeButton" name="HomeButton">
+            <input type="button" value="View Characters" id="CharacterButton" name="CharacterButton">
+            <input type="button" value="Character Creator" id="CreatorButton" name="CreatorButton">
+        </nav>
 
-            <section id="Content">
-                <h2>What is Dungeon and Dragons?</h2>
-                <p>
-                    Dungeons and Dragons is a table-top role playing game where players can explore magical worlds amd go on epic quests!
-                </p>
-                <p>
-                    There are two main roles to play within the game, the role of Game Master (GM) also known as the Dungeon Master (DM) and the players.
-                </p>
-                <p>
-                    The GM runs the game, describes encounters, plays the non-player characters and playes the enemies. Often GM will create there own world and plot for the game to take place in. However, this is not a requirement and Wizards of the Coast have their own world and lore that adventures can take part in. <a href="">More information can be found here!</a>
-                </p>
-                <p>
-                    The players each play one character. They have complete control over this character and what they do within the world. Players need to create characters in order to play the game. This website acts as a resource to introduce players to making their first level 1 character.
-                </p>
-                <input type="button" value="Create Your First Character!" id="CreateCharacterButton">
-            </section>
-        </main>
-        <aside>
-        </aside>
-        <footer>
-        </footer>
-        <script src="/scripts/sideNavBar.js"></script>
-        <script src="/scripts/homepage.js"></script>
-    </body>
+    </header>
+    <main id="main">
+
+        <section id="Content">
+            <h2>What is Dungeon and Dragons?</h2>
+            <p>
+                Dungeons and Dragons is a table-top role playing game where players can explore magical worlds amd go on
+                epic quests!
+            </p>
+            <p>
+                There are two main roles to play within the game, the role of Game Master (GM) also known as the Dungeon
+                Master (DM) and the players.
+            </p>
+            <p>
+                The players each play one character. They have complete control over this character and what they do
+                within the world. Players need to create characters in order to play the game. This website acts as a
+                resource to introduce players to making their first level 1 character.
+            </p>
+            <input type="button" value="Create Your First Character!" id="CreateCharacterButton">
+            <p>
+                The GM runs the game, describes encounters, plays the non-player characters and playes the enemies.
+                Often GM will create there own world and plot for the game to take place in. However, this is not a
+                requirement and Wizards of the Coast have their own world and lore that adventures can take part in. <a
+                    href="">More information can be found here!</a>
+            </p>
+        </section>
+    </main>
+    <script src="/scripts/sideNavBar.js"></script>
+    <script src="/scripts/homepage.js"></script>
+</body>
+
 </html>

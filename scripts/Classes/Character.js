@@ -1,8 +1,10 @@
 class Character {
+    name;
     race;
     subRace = null;
 
     charClass;
+    charClassFeatures = new Array();
     subClass;
 
     abScores;
@@ -19,10 +21,12 @@ class Character {
 
     spells;
 
-    constructor(abScores, charClass, subClass, race, subRace, background, bond, flaw, ideal, trait) {
+    constructor(abScores, name, charClass, charClassFeatures, subClass, race, subRace, background, bond, flaw, ideal, trait, spells) {
         this.abScores = abScores;
+        this.name = name;
         this.charClass = charClass;
         this.subClass = subClass;
+        this.charClassFeatures = charClassFeatures;
         this.race = race;
         this.subRace = subRace;
         this.background = background;
@@ -30,6 +34,7 @@ class Character {
         this.flaw = flaw;
         this.ideal = ideal;
         this.trait = trait;
+        this.spells = spells;
     }
 
     async Constructor(skillsList){
@@ -96,17 +101,5 @@ class Character {
 
     SetSkills(initialSkills){
         this.skills = initialSkills;
-    }
-
-    SetCombatStats() {
-
-    }
-
-    SaveCharacter(localStorage) {
-        let x = JSON.stringify(this);
-        localStorage.setItem("test", x);
-    }
-
-    LoadCharacter() {
     }
 }

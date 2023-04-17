@@ -12,14 +12,14 @@ class AbilityScores{
     SetAbScores(raceData, subraceData) {
         for (let bonus of raceData.ability_bonuses) {
             if(this.name == bonus.ability_score.name){
-                this.score += bonus.bonus;
+                this.score = parseInt(this.score,10) + parseInt(bonus.bonus,10);
             }
         }
 
         if(subraceData != undefined){
             for (let bonus of subraceData.ability_bonuses) {
                 if(this.name == bonus.ability_score.name){
-                    this.score += bonus.bonus;
+                    this.score = parseInt(this.score,10) + parseInt(bonus.bonus,10);
                 }
             }
         }

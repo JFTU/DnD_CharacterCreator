@@ -1,15 +1,15 @@
-footer{
+footer {
     background-color: black;
     width: 100%;
     height: 3em;
 }
 
-#Content{
+#Content {
     display: flex;
     flex-flow: column nowrap;
-    justify-content:center;
+    justify-content: center;
 }
 
-#CreateCharacterButton{
+#CreateCharacterButton {
     height: 3rem;
 }

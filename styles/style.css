@@ -3,11 +3,17 @@ main{
     flex-flow: row nowrap;
     height: 100%;
     width: 100%;
+    font-family:'Times New Roman', Times, serif;
 }
 
 #ScreenButtons{
     display: flex;
     flex-flow: row nowrap;
+}
+
+nav{
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 .Screen{
@@ -17,11 +23,8 @@ main{
     background-color: grey;
     border-width: 0.5rem;
     border-style: solid;
-    box-shadow: black 5px 5px 5px;
     width: 90%;
     height: fit-content;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
     padding: 1rem;
 }
 
@@ -31,44 +34,28 @@ main{
     background-color: darkgray;
 }
 
-a{
-    color: antiquewhite;
-}
-
 h1, h2{
     margin-top: 0.5rem;
     text-shadow: black 3px 5px 5px;
+    background-color: rgb(130, 36, 36);
     text-align: left;
+    margin-bottom: 1rem;
 }
 
+div{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
 body{
     background-color: brown;
     margin: 0.3em 0.5em 0.3em 0.5em;
-    color:azure;
+    color: whitesmoke;
     font-size: xx-large;
 }
 
 html{
     background-color: grey;
-}
-
-#sideBar{
-    display: flex;
-    flex-flow: row nowrap;
-    height:fit-content;
-    width:fit-content;
-    margin-right: 0.5em;
-    margin-top: 0.2em;
-}
-
-.navOpenButton{
-    width: min-content;
-}
-
-#OpenButton{
-    height: 7rem;
-    margin-top: 0.3rem;
 }
 
 .dividerLine{
@@ -83,25 +70,10 @@ html{
     width: 100%;
 }
 
-section{
-    width: 100%;
-}
-
-main nav section input{
-    width: 100%;
-    height: min-content;
-}
-
-main nav section{
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: left;
-}
-
 input{
     cursor: pointer;
     color: azure;
-    background-color: grey;
+    background-color: darkgray;
     font-size: x-large;
     text-shadow: black 1px 3px 3px;
 }
@@ -110,22 +82,24 @@ input:hover{
     box-shadow: black 0px 5px 5px;
 }
 
+input:focus-visible{
+    outline-color: yellow;
+    outline-width: 1rem ;
+    outline-style: solid;
+}
+
 select{
     font-size: x-large;
     margin-right: 4rem;
+    outline: none;
 }
 
 select:hover{
     box-shadow: black 5px 5px 5px;
 }
 
-.buttonsBox{
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.visible{
-    display: block;
+select:focus-visible{
+    box-shadow: black 5px 5px 5px;  
 }
 
 .notVisible{
