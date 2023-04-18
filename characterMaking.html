@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/creatorStyles.css">
-    <link rel="shortcut icon" href="/DnD-Emblem.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/creatorStyles.css">
+    <link rel="shortcut icon" href="DnD-Emblem.png" type="image/x-icon">
     <title> Template page</title>
 </head>
 
@@ -19,7 +19,8 @@
         </nav>
         <section id="NoAPI" class="notVisible">
             <h2>The API down</h2>
-            <p>The API seems to be down at the moment, please feel free to view any already made characters <a href="/characterViewing.html">here</a> </p>
+            <p>The API seems to be down at the moment, please feel free to view any already made characters <a
+                    href="/characterViewing.html">here</a> </p>
         </section>
     </header>
     <main id="main">
@@ -34,8 +35,13 @@
                 <form name="Basic" id="Basic">
 
                     <section class="notVisible" id="SaveForm">
-                        <h2>Save Character</h2>
-                        <input type="submit" value="Save" id="SaveButton">
+                        <section id="SaveElements">
+                            <h2>Save Character</h2>
+                            <input type="submit" value="Save" id="SaveButton">
+                        </section>
+                        <section id="SavingElements" class="notVisible">
+                            <h2>Saving</h2>
+                        </section>
                     </section>
 
                     <section id="StatsForm" class="visible Screen">
@@ -142,11 +148,11 @@
     </main>
 
 
-    <script src="/scripts/characterMaker.js"></script>
-    <script src="/scripts/Classes/Character.js"></script>
-    <script src="/scripts/Classes/AbilityScores.js"></script>
-    <script src="/scripts/Classes/Skill.js"></script>
-    <script src="/scripts/sideNavBar.js"></script>
+    <script src="scripts/characterMaker.js"></script>
+    <script src="scripts/Classes/Character.js"></script>
+    <script src="scripts/Classes/AbilityScores.js"></script>
+    <script src="scripts/Classes/Skill.js"></script>
+    <script src="scripts/sideNavBar.js"></script>
 </body>
 
 </html>
