@@ -205,7 +205,7 @@ function SetUp() {
     }
     //Sets the class and subclass name text
     classText.innerText += 'Class: ' + currentCharacter.charClass.name + ' Subclass: ' + currentCharacter.subClass.name;
-
+    classDesc.innerHTML = "";
     //Iterates through the class features and displays them
     for (let feature of currentCharacter.charClassFeatures) {
         classDesc.innerHTML += '<p>' + feature.name + '</p>';
@@ -227,15 +227,15 @@ function SetUp() {
 
     //Sets the race and sub race text
     if (currentCharacter.subRace != null) {
-        raceText.innerText += 'Race: ' + currentCharacter.race.name + ' Subrace: ' + currentCharacter.subRace.name;
+        raceText.innerText = 'Race: ' + currentCharacter.race.name + ' Subrace: ' + currentCharacter.subRace.name;
     }
     else {
-        raceText.innerText += 'Race: ' + currentCharacter.race.name;
+        raceText.innerText = 'Race: ' + currentCharacter.race.name;
     }
 
     //Sets the description of the chracters race
     raceDesc.innerHTML = '<p>' + currentCharacter.race.alignment + '</p><div class="dividerLine"></div><p>' + currentCharacter.race.size_description + '</p>';
-
+    proficiencyTable.innerHTML = "";
     for (let prof of currentCharacter.skills) {
         proficiencyTable.innerHTML += '<tr><td>' + prof.name + '</td><td class="SkillModifier">' + prof.modifier + '</td></tr>';
     }
@@ -254,6 +254,7 @@ function SetUp() {
     //Sets the flaw text
     traitText.innerText = "Trait: " + currentCharacter.trait;
 
+    spellsSection.innerHTML = "";
     //Checks if the character has spells
     if (currentCharacter.spells.length != 0) {
         //If the character has spells the spell tab button becomes visible
